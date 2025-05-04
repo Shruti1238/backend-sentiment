@@ -55,7 +55,7 @@ def speech_to_text(audio_bytes: bytes) -> str:
         # Write the audio data to a temporary WAV file
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_audio:
             temp_audio_path = temp_audio.name
-        sf.write(temp_audio_path, data, sample_rate)
+            sf.write(temp_audio_path, data, sample_rate)
         
         # Use speech_recognition to transcribe the audio from the temporary file
         recognizer = sr.Recognizer()
